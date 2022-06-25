@@ -26,6 +26,12 @@ namespace ExtinctionTextAdventure.Engine.Render
             {
                 UIElement element = await currentElement.BuildElementAsync();
 
+                if(element.IsInvisible)
+                {
+                    globalY++;
+                    continue;
+                }
+
                 ApplyStyle(element);
                 WriteContent(element);
 
@@ -40,29 +46,29 @@ namespace ExtinctionTextAdventure.Engine.Render
             for (int y = 0; y < element.Style.VerticalSpacing; y++)
             {
                 Console.Write('\n');
-
-                for (int x = 0; x < element.Style.HorizontalSpacing; x++)
-                {
-                    Console.Write(' ');
-                }
+            }
+            for (int x = 0; x < element.Style.HorizontalSpacing; x++)
+            {
+                Console.Write(' ');
             }
 
-            //Inline
-            if (!element.Style.Inline)
+            //Inline true
+            if (element.Style.Inline)
             {
-                Console.Write(Console.Out.NewLine);
-
+                if (lastUIElement != null)
+                    globalX += lastUIElement.Content.Size.X;
+            }
+            else //Inline false
+            {
                 globalX = 0;
-                globalY++;
+                
+                if (lastUIElement != null)
+                    globalY += lastUIElement.Content.Size.Y;
             }
-            else if(element.Style.Inline && lastUIElement != null)
-            {
-                globalX += lastUIElement.Content.Size.X + element.Style.HorizontalSpacing;
-            }
-            else
-            {
-                globalX += element.Style.HorizontalSpacing;
-            }
+
+            //Position
+            globalX += element.Style.HorizontalSpacing;
+            globalY += element.Style.VerticalSpacing;
         }
 
         private void WriteContent(UIElement element)
@@ -82,6 +88,7 @@ namespace ExtinctionTextAdventure.Engine.Render
                 }
 
                 currentX = globalX;
+                currentY++;
             }
         }
 

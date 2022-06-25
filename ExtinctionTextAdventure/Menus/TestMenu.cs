@@ -9,13 +9,13 @@ namespace ExtinctionTextAdventure.Menus
 {
     public class TestMenu : RpgRenderContent
     {
+        string square = "╔=╗\n" +
+                        "╠=╣\n" +
+                        "╘=╛";
+
         protected override async Task OnStartAsync(IRpgRenderContentDrawn contentDrawn)
         {
-            contentDrawn.OpenHorizontalArea();
-            contentDrawn.DrawnUIElement(new UIElement(new UIElementContent("=============="), new UIStyle()));
-            contentDrawn.DrawnUIElement(new UIElement(new UIElementContent(" EXTUBCTION RPG "), new UIStyle()));
-            contentDrawn.DrawnUIElement(new UIElement(new UIElementContent("=============="), new UIStyle()));
-            contentDrawn.CloseHorizontalArea();
+            contentDrawn.DrawnUIElement(new UIElement(new UIElementContent("Separados")));
 
             await Task.CompletedTask;
         }

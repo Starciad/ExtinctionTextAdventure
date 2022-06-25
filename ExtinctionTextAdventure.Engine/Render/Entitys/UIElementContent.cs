@@ -11,12 +11,17 @@ namespace ExtinctionTextAdventure.Engine.Render
         public string TextContent { get; set; }
         public Vector2 Size { get; set; }
 
+        public UIElementContent()
+        {
+            TextContent = string.Empty;
+            Size = new Vector2(0, 0);
+        }
+
         public UIElementContent(UIElementContent contentToCopy)
         {
             TextContent = contentToCopy.TextContent;
             Size = GetSize();
         }
-
         public UIElementContent(string content)
         {
             TextContent = content;

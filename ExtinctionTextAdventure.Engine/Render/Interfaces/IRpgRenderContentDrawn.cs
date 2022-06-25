@@ -13,6 +13,9 @@ namespace ExtinctionTextAdventure.Engine.Render
         void OpenHorizontalArea();
         void CloseHorizontalArea();
 
+        void OpenVerticalArea();
+        void CloseVerticalArea();
+
         void Spacing(int horizontalSpacing, int verticalSpacing);
     }
 }
