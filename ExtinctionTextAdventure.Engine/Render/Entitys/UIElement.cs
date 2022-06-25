@@ -1,20 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ExtinctionTextAdventure.Engine.Render
+﻿namespace ExtinctionTextAdventure.Engine.Render
 {
     public class UIElement
     {
-        public static UIElement BreakLine
-        {
-            get
-            {
-                return new UIElement(new UIStyle() { Inline = false }) { IsInvisible = true, };
-            }
-        }
+        public static UIElement BreakLine => new UIElement(new UIStyle() { Inline = false }) { IsInvisible = true, };
 
         public UIElementContent Content { get; }
         public UIStyle Style { get; }

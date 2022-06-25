@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace ExtinctionTextAdventure
+﻿namespace ExtinctionTextAdventure
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             new Startup().Main(args).GetAwaiter().GetResult();
         }

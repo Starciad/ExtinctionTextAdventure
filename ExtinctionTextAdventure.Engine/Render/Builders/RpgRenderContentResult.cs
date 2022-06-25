@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ExtinctionTextAdventure.Engine.Render
+﻿namespace ExtinctionTextAdventure.Engine.Render
 {
     public class RpgRenderContentResult
     {
         private readonly IEnumerable<UIElement> uiElements;
         private UIElement lastUIElement;
-
-        int globalX = 0;
-        int globalY = 0;
+        private int globalX = 0;
+        private int globalY = 0;
 
         public RpgRenderContentResult(IEnumerable<UIElement> elements)
         {
@@ -26,7 +19,7 @@ namespace ExtinctionTextAdventure.Engine.Render
             {
                 UIElement element = await currentElement.BuildElementAsync();
 
-                if(element.IsInvisible)
+                if (element.IsInvisible)
                 {
                     globalY++;
                     continue;
@@ -61,7 +54,7 @@ namespace ExtinctionTextAdventure.Engine.Render
             else //Inline false
             {
                 globalX = 0;
-                
+
                 if (lastUIElement != null)
                     globalY += lastUIElement.Content.Size.Y;
             }
