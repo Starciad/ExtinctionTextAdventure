@@ -1,16 +1,13 @@
-﻿using ExtinctionTextAdventure.Engine.Render;
+﻿using ExtinctionTextAdventure.Engine;
 
-namespace ExtinctionTextAdventure.Menus
+namespace ExtinctionTextAdventure
 {
     public class TestMenu : RpgRenderContent
     {
-        private string square = "╔=╗\n" +
-                        "╠=╣\n" +
-                        "╘=╛";
-
         protected override async Task OnStartAsync(IRpgRenderContentDrawn contentDrawn)
         {
-            contentDrawn.DrawnUIElement(new UIElement(new UIElementContent("Separados")));
+            contentDrawn.DrawnUIElement(new UIElement(new UIElementContent("X: " + Console.WindowWidth.ToString())));
+            contentDrawn.DrawnUIElement(new UIElement(new UIElementContent("Y: " + Console.WindowHeight.ToString())));
 
             await Task.CompletedTask;
         }

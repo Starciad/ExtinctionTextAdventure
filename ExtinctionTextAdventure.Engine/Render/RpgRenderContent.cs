@@ -1,8 +1,8 @@
-﻿namespace ExtinctionTextAdventure.Engine.Render
+﻿namespace ExtinctionTextAdventure.Engine
 {
     public abstract class RpgRenderContent
     {
-        private RpgRenderContentBuilder contentBuilder = new();
+        private readonly RpgRenderContentBuilder contentBuilder = new();
 
         internal async Task BuildRenderContentAsync()
         {

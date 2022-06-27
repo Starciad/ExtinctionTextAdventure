@@ -1,8 +1,10 @@
-﻿namespace ExtinctionTextAdventure.Engine.Render
+﻿using ExtinctionTextAdventure.Utilities;
+
+namespace ExtinctionTextAdventure.Engine
 {
     public class UIElementContent
     {
-        public string TextContent { get; set; }
+        public string TextContent { get; private set; }
         public Vector2 Size { get; set; }
 
         public UIElementContent()
@@ -10,7 +12,6 @@
             TextContent = string.Empty;
             Size = new Vector2(0, 0);
         }
-
         public UIElementContent(UIElementContent contentToCopy)
         {
             TextContent = contentToCopy.TextContent;
@@ -32,6 +33,12 @@
             int y = lines.Length;
 
             return new Vector2(x, y);
+        }
+
+        public void SetContent(string content)
+        {
+            TextContent = content;
+            Size = GetSize();
         }
     }
 }

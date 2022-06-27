@@ -1,13 +1,13 @@
-﻿using ExtinctionTextAdventure.Engine.Render;
-using ExtinctionTextAdventure.Menus;
+﻿using ExtinctionTextAdventure.Engine;
+using ExtinctionTextAdventure;
 
 namespace ExtinctionTextAdventure
 {
     public class Startup
     {
-        public async Task Main(string[] args)
+        public async Task Main()
         {
-            await RpgRender.RenderContentAsync<TestMenu>();
+            await RpgRender.RenderContentAsync<MainMenu>();
 
             await Task.Delay(-1);
         }

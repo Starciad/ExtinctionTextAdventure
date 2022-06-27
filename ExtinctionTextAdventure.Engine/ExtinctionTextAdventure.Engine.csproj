@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ExtinctionTextAdventure.Math\ExtinctionTextAdventure.Utilities.csproj" />
+  </ItemGroup>
+
 </Project>

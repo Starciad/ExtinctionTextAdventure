@@ -1,12 +1,11 @@
-﻿namespace ExtinctionTextAdventure.Engine.Render
+﻿namespace ExtinctionTextAdventure.Engine
 {
     public class UIElement
     {
-        public static UIElement BreakLine => new UIElement(new UIStyle() { Inline = false }) { IsInvisible = true, };
+        public static UIElement BreakLine => new(new UIStyle() { IsInvisible = true, Inline = false });
 
         public UIElementContent Content { get; }
         public UIStyle Style { get; }
-        public bool IsInvisible { get; set; }
 
         public UIElement()
         {

@@ -1,11 +1,28 @@
-﻿namespace ExtinctionTextAdventure.Engine.Render
+﻿namespace ExtinctionTextAdventure.Engine
 {
+    public enum HorizontalPositionType
+    {
+        None,
+        Left,
+        Center,
+        Right,
+    }
+
+    public enum VerticalPositionType
+    {
+        None,
+        Top,
+        Center,
+        Bottom,
+    }
+
     public class UIStyle
     {
         public ConsoleColor Color { get; set; }
         public bool Inline { get; set; }
         public int HorizontalSpacing { get; set; }
         public int VerticalSpacing { get; set; }
+        public bool IsInvisible { get; set; }
 
         public UIStyle()
         {

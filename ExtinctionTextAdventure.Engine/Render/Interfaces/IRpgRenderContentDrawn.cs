@@ -1,4 +1,4 @@
-﻿namespace ExtinctionTextAdventure.Engine.Render
+﻿namespace ExtinctionTextAdventure.Engine
 {
     public interface IRpgRenderContentDrawn
     {

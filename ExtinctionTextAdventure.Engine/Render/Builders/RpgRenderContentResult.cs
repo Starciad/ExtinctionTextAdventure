@@ -1,4 +1,6 @@
-﻿namespace ExtinctionTextAdventure.Engine.Render
+﻿using ExtinctionTextAdventure.Utilities;
+
+namespace ExtinctionTextAdventure.Engine
 {
     public class RpgRenderContentResult
     {
@@ -10,8 +12,8 @@
         public RpgRenderContentResult(IEnumerable<UIElement> elements)
         {
             uiElements = elements;
+            lastUIElement = new(new UIStyle() { IsInvisible = true, Inline = false });
         }
-
         public async Task ShowRenderAsync()
         {
             Console.CursorVisible = false;
@@ -19,7 +21,7 @@
             {
                 UIElement element = await currentElement.BuildElementAsync();
 
-                if (element.IsInvisible)
+                if (element.Style.IsInvisible)
                 {
                     globalY++;
                     continue;
@@ -33,6 +35,7 @@
         }
 
         //=====================//
+        #region Styles
         private void ApplyStyle(UIElement element)
         {
             //Spacing
@@ -45,13 +48,13 @@
                 Console.Write(' ');
             }
 
-            //Inline true
+            //Inline
             if (element.Style.Inline)
             {
                 if (lastUIElement != null)
                     globalX += lastUIElement.Content.Size.X;
             }
-            else //Inline false
+            else
             {
                 globalX = 0;
 
@@ -64,6 +67,9 @@
             globalY += element.Style.VerticalSpacing;
         }
 
+        #endregion
+
+        #region Writers
         private void WriteContent(UIElement element)
         {
             int currentX = globalX;
@@ -73,24 +79,22 @@
             {
                 foreach (char letter in line.ToCharArray())
                 {
-                    currentX++;
                     Console.SetCursorPosition(currentX, currentY);
-                    WriteContent(letter, element.Style);
+                    WriteLetter(letter, element.Style);
 
-                    Thread.Sleep(10);
+                    currentX++;
+                    Thread.Sleep(5);
                 }
 
                 currentX = globalX;
                 currentY++;
             }
         }
-
-        //================================//
-
-        private void WriteContent(char letter, UIStyle style)
+        private void WriteLetter(char letter, UIStyle style)
         {
             Console.ForegroundColor = style.Color;
             Console.Write(letter);
         }
+        #endregion
     }
 }

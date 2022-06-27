@@ -1,4 +1,4 @@
-﻿namespace ExtinctionTextAdventure.Engine
+﻿namespace ExtinctionTextAdventure.Utilities
 {
     public struct Vector2
     {

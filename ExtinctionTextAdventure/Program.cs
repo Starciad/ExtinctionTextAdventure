@@ -4,7 +4,7 @@
     {
         private static void Main(string[] args)
         {
-            new Startup().Main(args).GetAwaiter().GetResult();
+            new Startup().Main().GetAwaiter().GetResult();
         }
     }
 }

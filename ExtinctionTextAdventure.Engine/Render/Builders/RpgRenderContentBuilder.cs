@@ -1,4 +1,4 @@
-﻿namespace ExtinctionTextAdventure.Engine.Render
+﻿namespace ExtinctionTextAdventure.Engine
 {
     public enum CurrentAreaOpen
     {
@@ -9,12 +9,12 @@
 
     public class RpgRenderContentBuilder : IRpgRenderContentDrawn
     {
-        private List<UIElement> uiElements = new();
+        private readonly List<UIElement> uiElements = new();
 
         private bool horizontalAreaOpen = false;
         private bool verticalAreaOpen = false;
 
-        private List<CurrentAreaOpen> currentAreaOpens = new();
+        private readonly List<CurrentAreaOpen> currentAreaOpens = new();
         private int horizontalSpacing = 0;
         private int verticalSpacing = 0;
 
@@ -75,7 +75,7 @@
             if (element.Style.VerticalSpacing == 0) element.Style.VerticalSpacing = verticalSpacing;
 
             if (currentAreaOpens.Count > 0)
-                element.Style.Inline = currentAreaOpens[currentAreaOpens.Count - 1] switch
+                element.Style.Inline = currentAreaOpens[^1] switch
                 {
                     CurrentAreaOpen.None => false,
                     CurrentAreaOpen.Horizontal => true,
