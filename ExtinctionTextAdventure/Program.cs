@@ -1,8 +1,8 @@
 ﻿namespace ExtinctionTextAdventure
 {
-    internal class Program
+    internal static class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             new Startup().Main().GetAwaiter().GetResult();
         }

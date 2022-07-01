@@ -1,28 +1,33 @@
-﻿using ExtinctionTextAdventure.Utilities;
+﻿#pragma warning disable CS8618
+
+using ExtinctionTextAdventure.Utilities;
 
 namespace ExtinctionTextAdventure.Engine
 {
-    public class UIElementContent
+    public sealed class ElementContent : ElementComponentBase
     {
         public string TextContent { get; private set; }
         public Vector2 Size { get; set; }
 
-        public UIElementContent()
+        public ElementContent()
         {
-            TextContent = string.Empty;
+            StartupContent(string.Empty);
             Size = new Vector2(0, 0);
         }
-        public UIElementContent(UIElementContent contentToCopy)
+        public ElementContent(ElementContent contentToCopy)
         {
-            TextContent = contentToCopy.TextContent;
-            Size = GetSize();
+            StartupContent(contentToCopy.TextContent);
         }
-        public UIElementContent(string content)
+        public ElementContent(string content)
         {
-            TextContent = content;
-            Size = GetSize();
+            StartupContent(content);
         }
 
+        private void StartupContent(string textContent)
+        {
+            TextContent = textContent;
+            Size = GetSize();
+        }
         private Vector2 GetSize()
         {
             string[] lines = TextContent.Split('\n');
@@ -34,6 +39,8 @@ namespace ExtinctionTextAdventure.Engine
 
             return new Vector2(x, y);
         }
+
+        //================//
 
         public void SetContent(string content)
         {

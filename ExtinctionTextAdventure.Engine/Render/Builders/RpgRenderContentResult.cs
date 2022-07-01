@@ -1,25 +1,59 @@
-﻿using ExtinctionTextAdventure.Utilities;
+﻿#pragma warning disable CS8602
+
+using System.Diagnostics;
 
 namespace ExtinctionTextAdventure.Engine
 {
     public class RpgRenderContentResult
     {
-        private readonly IEnumerable<UIElement> uiElements;
-        private UIElement lastUIElement;
+        internal List<UIEntityRender> UiEntitiesToRender { get; }
+        internal int CurrentEntityToRenderInQueue { get { return currentEntityToRenderInQueue; } }
+
+        private UIElementObject lastUIElement;
         private int globalX = 0;
         private int globalY = 0;
+        private int currentEntityToRenderInQueue = 0;
 
-        public RpgRenderContentResult(IEnumerable<UIElement> elements)
+        private RpgBuilderHelper RpgBuilderHelper { get; }
+        private RpgInputHelper RpgInputHelper { get; }
+
+        public RpgRenderContentResult(IEnumerable<UIEntityRender> elements)
         {
-            uiElements = elements;
-            lastUIElement = new(new UIStyle() { IsInvisible = true, Inline = false });
+            RpgBuilderHelper = new(this);
+            RpgInputHelper = new(this);
+
+            UiEntitiesToRender = new(elements);
+            lastUIElement = UIElementObject.BreakLine;
         }
         public async Task ShowRenderAsync()
         {
+            Console.Clear();
+
+            globalX = 0;
+            globalY = 0;
+
+            currentEntityToRenderInQueue = 0;
+
             Console.CursorVisible = false;
-            foreach (UIElement currentElement in uiElements)
+            for (int i = 0; i < UiEntitiesToRender.Count; i++)
             {
-                UIElement element = await currentElement.BuildElementAsync();
+                currentEntityToRenderInQueue = i + 1;
+                UIEntityRender currentEntity = UiEntitiesToRender[i];
+
+                //Check for the type
+                Type entityType = currentEntity.GetType();
+                UIElementObject? element;
+
+                if (entityType == typeof(UIElementObject))
+                {
+                    element = await currentEntity.BuildElementAsync(RpgBuilderHelper);
+                }
+                else
+                {
+                    UiEntitiesToRender.Remove(currentEntity);
+                    await currentEntity.BuildElementAsync(RpgBuilderHelper);
+                    continue;
+                }
 
                 if (element.Style.IsInvisible)
                 {
@@ -32,11 +66,13 @@ namespace ExtinctionTextAdventure.Engine
 
                 lastUIElement = element;
             }
+
+            await StartInteractionAsync();
         }
 
-        //=====================//
         #region Styles
-        private void ApplyStyle(UIElement element)
+
+        private void ApplyStyle(UIElementObject element)
         {
             //Spacing
             for (int y = 0; y < element.Style.VerticalSpacing; y++)
@@ -67,34 +103,57 @@ namespace ExtinctionTextAdventure.Engine
             globalY += element.Style.VerticalSpacing;
         }
 
-        #endregion
-
+        #endregion Styles
         #region Writers
-        private void WriteContent(UIElement element)
+
+        private void WriteContent(UIElementObject element)
         {
             int currentX = globalX;
             int currentY = globalY;
 
             foreach (string line in element.Content.TextContent.Split('\n'))
             {
-                foreach (char letter in line.ToCharArray())
+                foreach (char letter in line)
                 {
                     Console.SetCursorPosition(currentX, currentY);
                     WriteLetter(letter, element.Style);
 
                     currentX++;
-                    Thread.Sleep(5);
+                    Thread.Sleep(2);
                 }
 
                 currentX = globalX;
                 currentY++;
             }
         }
-        private void WriteLetter(char letter, UIStyle style)
+        private void WriteLetter(char letter, ElementStyle style)
         {
             Console.ForegroundColor = style.Color;
             Console.Write(letter);
         }
-        #endregion
+
+        #endregion Writers
+
+        private async Task StartInteractionAsync()
+        {
+            string? result = Console.ReadLine();
+
+            if (!string.IsNullOrEmpty(result))
+            {
+                UIElementObject? inputObj = UiEntitiesToRender.OfType<UIElementObject>().FirstOrDefault(x => result == x.Content.TextContent);
+
+                if (inputObj?.Input != null)
+                {
+                    inputObj.Input.OnSelected?.Invoke(RpgInputHelper);
+                    await Task.CompletedTask;
+                }
+                else
+                {
+                    await ShowRenderAsync();
+                }
+            }
+
+            await Task.CompletedTask;
+        }
     }
 }
