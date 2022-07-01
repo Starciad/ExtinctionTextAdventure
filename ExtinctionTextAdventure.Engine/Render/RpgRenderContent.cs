@@ -1,4 +1,7 @@
-﻿namespace ExtinctionTextAdventure.Engine
+﻿using ExtinctionTextAdventure.Engine.Render.Builders;
+using ExtinctionTextAdventure.Engine.Render.Interfaces;
+
+namespace ExtinctionTextAdventure.Engine.Render
 {
     public abstract class RpgRenderContent
     {

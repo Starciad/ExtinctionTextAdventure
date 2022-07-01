@@ -1,4 +1,7 @@
-﻿namespace ExtinctionTextAdventure.Engine
+﻿using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements;
+using ExtinctionTextAdventure.Engine.Render.Enums;
+
+namespace ExtinctionTextAdventure.Engine.Render.Interfaces
 {
     public interface IRpgRenderContentDrawn
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExtinctionTextAdventure.Engine
+namespace ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Interfaces
 {
     public interface IRpgInputHelper
     {

@@ -1,10 +1,13 @@
-﻿namespace ExtinctionTextAdventure.Engine
+﻿using ExtinctionTextAdventure.Engine.Render.Builders;
+using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Interfaces;
+
+namespace ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Helpers
 {
-    public class RpgBuilderHelper : IRpgBuilderHelper
+    internal sealed class RpgBuilderHelper : IRpgBuilderHelper
     {
         private readonly RpgRenderContentResult rpgRenderBuilder;
 
-        public RpgBuilderHelper(RpgRenderContentResult rpgRenderBuilder)
+        internal RpgBuilderHelper(RpgRenderContentResult rpgRenderBuilder)
         {
             this.rpgRenderBuilder = rpgRenderBuilder;
         }

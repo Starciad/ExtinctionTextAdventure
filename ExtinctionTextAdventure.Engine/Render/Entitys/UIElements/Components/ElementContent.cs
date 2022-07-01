@@ -2,17 +2,19 @@
 
 using ExtinctionTextAdventure.Utilities;
 
-namespace ExtinctionTextAdventure.Engine
+namespace ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Components
 {
     public sealed class ElementContent : ElementComponentBase
     {
-        public string TextContent { get; private set; }
-        public Vector2 Size { get; set; }
+        public string TextContent => textContent;
+        public Vector2 Size => size;
+
+        private string textContent = string.Empty;
+        private Vector2 size = new(0, 0);
 
         public ElementContent()
         {
             StartupContent(string.Empty);
-            Size = new Vector2(0, 0);
         }
         public ElementContent(ElementContent contentToCopy)
         {
@@ -25,8 +27,8 @@ namespace ExtinctionTextAdventure.Engine
 
         private void StartupContent(string textContent)
         {
-            TextContent = textContent;
-            Size = GetSize();
+            this.textContent = textContent;
+            size = GetSize();
         }
         private Vector2 GetSize()
         {
@@ -44,8 +46,8 @@ namespace ExtinctionTextAdventure.Engine
 
         public void SetContent(string content)
         {
-            TextContent = content;
-            Size = GetSize();
+            textContent = content;
+            size = GetSize();
         }
     }
 }

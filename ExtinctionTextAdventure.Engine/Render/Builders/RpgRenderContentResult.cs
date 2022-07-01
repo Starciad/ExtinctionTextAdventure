@@ -1,10 +1,14 @@
 ﻿#pragma warning disable CS8602
 
+using ExtinctionTextAdventure.Engine.Render.Entitys;
+using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements;
+using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Components;
+using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Helpers;
 using System.Diagnostics;
 
-namespace ExtinctionTextAdventure.Engine
+namespace ExtinctionTextAdventure.Engine.Render.Builders
 {
-    public class RpgRenderContentResult
+    internal sealed class RpgRenderContentResult
     {
         internal List<UIEntityRender> UiEntitiesToRender { get; }
         internal int CurrentEntityToRenderInQueue { get { return currentEntityToRenderInQueue; } }
@@ -17,7 +21,7 @@ namespace ExtinctionTextAdventure.Engine
         private RpgBuilderHelper RpgBuilderHelper { get; }
         private RpgInputHelper RpgInputHelper { get; }
 
-        public RpgRenderContentResult(IEnumerable<UIEntityRender> elements)
+        internal RpgRenderContentResult(IEnumerable<UIEntityRender> elements)
         {
             RpgBuilderHelper = new(this);
             RpgInputHelper = new(this);
@@ -25,7 +29,7 @@ namespace ExtinctionTextAdventure.Engine
             UiEntitiesToRender = new(elements);
             lastUIElement = UIElementObject.BreakLine;
         }
-        public async Task ShowRenderAsync()
+        internal async Task ShowRenderAsync()
         {
             Console.Clear();
 

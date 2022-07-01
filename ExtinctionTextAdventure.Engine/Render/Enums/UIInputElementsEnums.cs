@@ -1,4 +1,4 @@
-﻿namespace ExtinctionTextAdventure.Engine
+﻿namespace ExtinctionTextAdventure.Engine.Render.Enums
 {
     public enum UIElementObjectType
     {

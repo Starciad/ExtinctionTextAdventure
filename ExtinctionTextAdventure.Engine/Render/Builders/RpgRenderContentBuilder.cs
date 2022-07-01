@@ -1,13 +1,20 @@
-﻿namespace ExtinctionTextAdventure.Engine
+﻿using ExtinctionTextAdventure.Engine.Render.Entitys;
+using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements;
+using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Areas;
+using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Components;
+using ExtinctionTextAdventure.Engine.Render.Enums;
+using ExtinctionTextAdventure.Engine.Render.Interfaces;
+
+namespace ExtinctionTextAdventure.Engine.Render.Builders
 {
-    public enum CurrentAreaOpen
+    internal enum CurrentAreaOpen
     {
         None,
         Horizontal,
         Vertical
     }
 
-    public class RpgRenderContentBuilder : IRpgRenderContentDrawn
+    internal sealed class RpgRenderContentBuilder : IRpgRenderContentDrawn
     {
         internal List<UIEntityRender> UiEntitiesToRender { get; private set; }
 
@@ -25,7 +32,6 @@
 
         //Input
         private InputAreaType currentAreaOpenType;
-
         private UIInputArea? currentInputAreaOpen;
 
         internal RpgRenderContentBuilder()
@@ -36,13 +42,13 @@
         internal async Task FinalConfiguration()
         {
             Spacing(0, 3);
-            DrawnUIElement(new UIElementObject(new ElementContent("Input the option you want to select."), new ElementStyle() { Color = ConsoleColor.Green, HorizontalSpacing = 1}));
-            DrawnUIElement(new UIElementObject(new ElementContent("Enter input:"), new ElementStyle() { Color = ConsoleColor.Yellow, HorizontalSpacing = 2}));
+            DrawnUIElement(new UIElementObject(new ElementContent("Input the option you want to select."), new ElementStyle() { Color = ConsoleColor.Green, HorizontalSpacing = 1 }));
+            DrawnUIElement(new UIElementObject(new ElementContent("Enter input:"), new ElementStyle() { Color = ConsoleColor.Yellow, HorizontalSpacing = 2 }));
             DrawnUIElement(new UIElementObject(new ElementContent(" "), new ElementStyle() { Color = ConsoleColor.White, Inline = true }));
 
             await Task.CompletedTask;
         }
-        public async Task<RpgRenderContentResult> CompileContentAsync()
+        internal async Task<RpgRenderContentResult> CompileContentAsync()
         {
             return await Task.FromResult(new RpgRenderContentResult(UiEntitiesToRender));
         }

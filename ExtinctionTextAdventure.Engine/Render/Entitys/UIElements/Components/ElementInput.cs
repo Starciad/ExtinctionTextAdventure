@@ -1,4 +1,6 @@
-﻿namespace ExtinctionTextAdventure.Engine
+﻿using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Interfaces;
+
+namespace ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Components
 {
     public sealed class ElementInput : ElementComponentBase
     {

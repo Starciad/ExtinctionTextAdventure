@@ -1,4 +1,7 @@
-﻿namespace ExtinctionTextAdventure.Engine
+﻿using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Interfaces;
+using ExtinctionTextAdventure.Engine.Render.Enums;
+
+namespace ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Areas
 {
     public sealed class UIInputArea : UIEntityRender
     {
@@ -10,7 +13,6 @@
             AreaType = inputAreaType;
             InputElements = new();
         }
-
         public void AddElement(UIElementObject uiElement)
         {
             InputElements.Add(uiElement);

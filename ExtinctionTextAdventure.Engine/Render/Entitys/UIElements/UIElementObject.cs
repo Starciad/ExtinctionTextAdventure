@@ -1,6 +1,9 @@
 ﻿#pragma warning disable CS8618
 
-namespace ExtinctionTextAdventure.Engine
+using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Components;
+using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Interfaces;
+
+namespace ExtinctionTextAdventure.Engine.Render.Entitys.UIElements
 {
     public sealed class UIElementObject : UIEntityRender
     {

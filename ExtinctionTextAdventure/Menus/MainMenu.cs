@@ -4,6 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ExtinctionTextAdventure.Engine;
+using ExtinctionTextAdventure.Engine.Render;
+using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements;
+using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Components;
+using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Interfaces;
+using ExtinctionTextAdventure.Engine.Render.Enums;
+using ExtinctionTextAdventure.Engine.Render.Interfaces;
 using ExtinctionTextAdventure.Utilities;
 
 namespace ExtinctionTextAdventure
@@ -50,10 +56,10 @@ namespace ExtinctionTextAdventure
         }
         private void BuildOptions()
         {
-            UIElementObject playInput = new(new ElementContent("Play"), new ElementStyle() { DisplayInputNameHelpers = true }, new ElementInput() { OnSelected = PlayInput });
-            UIElementObject optionsInput = new(new ElementContent("Options"), new ElementStyle() { DisplayInputNameHelpers = true }, new ElementInput() { OnSelected = OptionsInput });
-            UIElementObject modsInput = new(new ElementContent("Mods"), new ElementStyle() { DisplayInputNameHelpers = true }, new ElementInput() { OnSelected = ModsInput });
-            UIElementObject quitInput = new(new ElementContent("Quit"), new ElementStyle() { DisplayInputNameHelpers = true }, new ElementInput() { OnSelected = QuitInput });
+            UIElementObject playInput = new(new ElementContent("Play"), new ElementStyle(), new ElementInput() { OnSelected = PlayInput });
+            UIElementObject optionsInput = new(new ElementContent("Options"), new ElementStyle(), new ElementInput() { OnSelected = OptionsInput });
+            UIElementObject modsInput = new(new ElementContent("Mods"), new ElementStyle(), new ElementInput() { OnSelected = ModsInput });
+            UIElementObject quitInput = new(new ElementContent("Quit"), new ElementStyle(), new ElementInput() { OnSelected = QuitInput });
 
             playInput.Style.HorizontalSpacing = RpgMath.GetPercentageValue(Console.BufferWidth, 50) - (playInput.Content.Size.X / 2) - 1;
             optionsInput.Style.HorizontalSpacing = RpgMath.GetPercentageValue(Console.BufferWidth, 50) - (optionsInput.Content.Size.X / 2) - 1;
