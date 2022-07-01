@@ -1,4 +1,4 @@
-﻿namespace ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Interfaces
+﻿namespace ExtinctionTextAdventure.Core.Render.Entitys.UIElements.Interfaces
 {
     public interface IRpgBuilderHelper
     {

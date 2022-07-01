@@ -1,4 +1,4 @@
-﻿namespace ExtinctionTextAdventure.Engine.Render
+﻿namespace ExtinctionTextAdventure.Core.Render
 {
     public static class RpgRender
     {

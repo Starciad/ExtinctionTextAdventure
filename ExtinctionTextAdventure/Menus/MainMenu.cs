@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ExtinctionTextAdventure.Engine;
-using ExtinctionTextAdventure.Engine.Render;
-using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements;
-using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Components;
-using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Interfaces;
-using ExtinctionTextAdventure.Engine.Render.Enums;
-using ExtinctionTextAdventure.Engine.Render.Interfaces;
+using ExtinctionTextAdventure.Core.Render;
+using ExtinctionTextAdventure.Core.Render.Entitys.UIElements;
+using ExtinctionTextAdventure.Core.Render.Entitys.UIElements.Components;
+using ExtinctionTextAdventure.Core.Render.Entitys.UIElements.Interfaces;
+using ExtinctionTextAdventure.Core.Render.Enums;
+using ExtinctionTextAdventure.Core.Render.Interfaces;
 using ExtinctionTextAdventure.Utilities;
 
 namespace ExtinctionTextAdventure

@@ -1,4 +1,4 @@
-﻿namespace ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Components
+﻿namespace ExtinctionTextAdventure.Core.Render.Entitys.UIElements.Components
 {
     public abstract class ElementComponentBase
     {

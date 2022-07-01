@@ -1,5 +1,5 @@
 ﻿using ExtinctionTextAdventure;
-using ExtinctionTextAdventure.Engine.Render;
+using ExtinctionTextAdventure.Core.Render;
 
 namespace ExtinctionTextAdventure
 {

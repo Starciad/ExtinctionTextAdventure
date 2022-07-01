@@ -1,7 +1,7 @@
-﻿using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements;
-using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Interfaces;
+﻿using ExtinctionTextAdventure.Core.Render.Entitys.UIElements;
+using ExtinctionTextAdventure.Core.Render.Entitys.UIElements.Interfaces;
 
-namespace ExtinctionTextAdventure.Engine.Render.Entitys
+namespace ExtinctionTextAdventure.Core.Render.Entitys
 {
     public abstract class UIEntityRender
     {

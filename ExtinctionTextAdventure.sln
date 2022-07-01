@@ -5,9 +5,9 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtinctionTextAdventure", "ExtinctionTextAdventure\ExtinctionTextAdventure.csproj", "{6325632C-3477-4A9C-94A7-F788D20079FB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtinctionTextAdventure.Engine", "ExtinctionTextAdventure.Engine\ExtinctionTextAdventure.Engine.csproj", "{90A12824-DBE0-44C8-8534-7EF50F55BA1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtinctionTextAdventure.Core", "ExtinctionTextAdventure.Engine\ExtinctionTextAdventure.Core.csproj", "{90A12824-DBE0-44C8-8534-7EF50F55BA1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtinctionTextAdventure.Utilities", "ExtinctionTextAdventure.Math\ExtinctionTextAdventure.Utilities.csproj", "{8DBDF082-5843-4823-9F3A-21FA1E707BE2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtinctionTextAdventure.Utilities", "ExtinctionTextAdventure.Math\ExtinctionTextAdventure.Utilities.csproj", "{8DBDF082-5843-4823-9F3A-21FA1E707BE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

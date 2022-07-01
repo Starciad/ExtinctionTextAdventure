@@ -1,12 +1,12 @@
 ﻿#pragma warning disable CS8602
 
-using ExtinctionTextAdventure.Engine.Render.Entitys;
-using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements;
-using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Components;
-using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Helpers;
+using ExtinctionTextAdventure.Core.Render.Entitys;
+using ExtinctionTextAdventure.Core.Render.Entitys.UIElements;
+using ExtinctionTextAdventure.Core.Render.Entitys.UIElements.Components;
+using ExtinctionTextAdventure.Core.Render.Entitys.UIElements.Helpers;
 using System.Diagnostics;
 
-namespace ExtinctionTextAdventure.Engine.Render.Builders
+namespace ExtinctionTextAdventure.Core.Render.Builders
 {
     internal sealed class RpgRenderContentResult
     {

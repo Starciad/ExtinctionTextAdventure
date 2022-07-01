@@ -1,7 +1,7 @@
-﻿using ExtinctionTextAdventure.Engine.Render;
-using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements;
-using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Components;
-using ExtinctionTextAdventure.Engine.Render.Interfaces;
+﻿using ExtinctionTextAdventure.Core.Render;
+using ExtinctionTextAdventure.Core.Render.Entitys.UIElements;
+using ExtinctionTextAdventure.Core.Render.Entitys.UIElements.Components;
+using ExtinctionTextAdventure.Core.Render.Interfaces;
 
 namespace ExtinctionTextAdventure
 {

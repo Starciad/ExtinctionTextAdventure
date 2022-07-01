@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExtinctionTextAdventure.Engine\ExtinctionTextAdventure.Engine.csproj" />
+    <ProjectReference Include="..\ExtinctionTextAdventure.Engine\ExtinctionTextAdventure.Core.csproj" />
     <ProjectReference Include="..\ExtinctionTextAdventure.Math\ExtinctionTextAdventure.Utilities.csproj" />
   </ItemGroup>
 

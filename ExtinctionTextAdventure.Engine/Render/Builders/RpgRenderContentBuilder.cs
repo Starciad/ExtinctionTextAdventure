@@ -1,11 +1,11 @@
-﻿using ExtinctionTextAdventure.Engine.Render.Entitys;
-using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements;
-using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Areas;
-using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Components;
-using ExtinctionTextAdventure.Engine.Render.Enums;
-using ExtinctionTextAdventure.Engine.Render.Interfaces;
+﻿using ExtinctionTextAdventure.Core.Render.Entitys;
+using ExtinctionTextAdventure.Core.Render.Entitys.UIElements;
+using ExtinctionTextAdventure.Core.Render.Entitys.UIElements.Areas;
+using ExtinctionTextAdventure.Core.Render.Entitys.UIElements.Components;
+using ExtinctionTextAdventure.Core.Render.Enums;
+using ExtinctionTextAdventure.Core.Render.Interfaces;
 
-namespace ExtinctionTextAdventure.Engine.Render.Builders
+namespace ExtinctionTextAdventure.Core.Render.Builders
 {
     internal enum CurrentAreaOpen
     {

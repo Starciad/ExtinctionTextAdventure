@@ -1,7 +1,7 @@
-﻿using ExtinctionTextAdventure.Engine.Render.Builders;
-using ExtinctionTextAdventure.Engine.Render.Interfaces;
+﻿using ExtinctionTextAdventure.Core.Render.Builders;
+using ExtinctionTextAdventure.Core.Render.Interfaces;
 
-namespace ExtinctionTextAdventure.Engine.Render
+namespace ExtinctionTextAdventure.Core.Render
 {
     public abstract class RpgRenderContent
     {

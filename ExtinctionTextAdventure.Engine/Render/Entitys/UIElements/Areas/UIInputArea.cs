@@ -1,7 +1,7 @@
-﻿using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Interfaces;
-using ExtinctionTextAdventure.Engine.Render.Enums;
+﻿using ExtinctionTextAdventure.Core.Render.Entitys.UIElements.Interfaces;
+using ExtinctionTextAdventure.Core.Render.Enums;
 
-namespace ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Areas
+namespace ExtinctionTextAdventure.Core.Render.Entitys.UIElements.Areas
 {
     public sealed class UIInputArea : UIEntityRender
     {

@@ -1,6 +1,6 @@
-﻿using ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Interfaces;
+﻿using ExtinctionTextAdventure.Core.Render.Entitys.UIElements.Interfaces;
 
-namespace ExtinctionTextAdventure.Engine.Render.Entitys.UIElements.Components
+namespace ExtinctionTextAdventure.Core.Render.Entitys.UIElements.Components
 {
     public sealed class ElementInput : ElementComponentBase
     {
